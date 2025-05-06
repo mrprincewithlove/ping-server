@@ -26,7 +26,10 @@ jobs:
         run: npm run build --if-present
         env: 
           URL2: ${{ secrets.URL2 }}
-
+          
+      - name: Echo secret
+        run: echo "URL2=${{ secrets.URL2 }}"
+        
       - name: Sleep for a few seconds
         run: sleep 10s
 
