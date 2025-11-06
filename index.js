@@ -2,8 +2,10 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 
+const { mergeAndWriteSheet } = require('./googleSheet');
 
 const url = process.env.URL2;
+const SPREADSHEET_ID = process.env.SPREADSHEET;
 
 
 const today = new Date().toISOString().split('T')[0];
@@ -132,4 +134,7 @@ function updateFilesInfo(dataDir, filesInfoFile) {
 
     console.log(`today json file saved: ${todayJsonFile}`);
     console.log(`success, db updated`);
+     console.log(`start sheet add`);
+     await mergeAndWriteSheet(SPREADSHEET_ID, today, parsedData);
+      console.log(`end sheet add`);
 })();
