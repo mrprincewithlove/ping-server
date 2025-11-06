@@ -14,10 +14,14 @@ const auth = new google.auth.GoogleAuth({
 });
 
 async function mergeAndWriteSheet(spreadsheetId, sheetTitle, newData) {
+    console.log("Merge and write starts");
+    console.log(spreadsheetId);
+    console.log(sheetTitle);
     const client = await auth.getClient();
+    console.log("Check for sheet");
     const sheets = google.sheets({ version: 'v4', auth: client });
     let isSheetExists = false;
-    
+    console.log(sheets);
     // 1. Add new sheet with today's date
     try {
         // Get existing sheet names
