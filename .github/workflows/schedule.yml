@@ -26,6 +26,8 @@ jobs:
         run: npm run build --if-present
         env: 
           URL2: ${{ secrets.URL2 }}
+          CREDENTIALS: ${{ secrets.CREDENTIALS }}
+          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
           
       - name: Echo secret
         run: echo "URL2=${{ secrets.URL2 }}"
