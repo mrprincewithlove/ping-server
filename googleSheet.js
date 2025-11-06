@@ -17,8 +17,7 @@ async function mergeAndWriteSheet(spreadsheetId, sheetTitle, newData) {
     const client = await auth.getClient();
     const sheets = google.sheets({ version: 'v4', auth: client });
     let isSheetExists = false;
-    console.log(spreadsheetId);
-    console.log(sheetTitle);
+    
     // 1. Add new sheet with today's date
     try {
         // Get existing sheet names
@@ -124,4 +123,5 @@ async function mergeAndWriteSheet(spreadsheetId, sheetTitle, newData) {
 
 
 module.exports = { mergeAndWriteSheet };
+
 
