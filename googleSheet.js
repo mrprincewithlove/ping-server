@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 
-const credentials = process.env.CREDENTIALS;
+const credentials = JSON.parse(process.env.CREDENTIALS);
 
 
 const auth = new google.auth.GoogleAuth({
@@ -119,5 +119,6 @@ async function mergeAndWriteSheet(spreadsheetId, sheetTitle, newData) {
         throw err;
     }
 }
+
 
 module.exports = { mergeAndWriteSheet };
