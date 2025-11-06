@@ -135,6 +135,8 @@ function updateFilesInfo(dataDir, filesInfoFile) {
     console.log(`today json file saved: ${todayJsonFile}`);
     console.log(`success, db updated`);
      console.log(`start sheet add`);
+     console.log(SPREADSHEET_ID);
+     console.log(today);
      await mergeAndWriteSheet(SPREADSHEET_ID, today, parsedData);
       console.log(`end sheet add`);
 })();
