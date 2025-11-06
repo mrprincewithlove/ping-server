@@ -27,7 +27,7 @@ jobs:
         env: 
           URL2: ${{ secrets.URL2 }}
           CREDENTIALS: ${{ secrets.CREDENTIALS }}
-          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+          SPREADSHEET_ID: ${{ secrets.SPREADSHEET }}
           
       - name: Echo secret
         run: echo "URL2=${{ secrets.URL2 }}"
