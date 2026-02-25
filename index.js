@@ -139,6 +139,6 @@ function updateFilesInfo(dataDir, filesInfoFile) {
      console.log(spreadsheetId);
      console.log(today);
     
-     await mergeAndWriteSheet(spreadsheetId, today, parsedData);
+     // await mergeAndWriteSheet(spreadsheetId, today, parsedData);
       console.log(`end sheet add`);
 })();
